@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@theme {
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-sans: "Barlow", "Inter", system-ui, sans-serif;
+
+  --color-bg: oklch(0.97 0.015 85);
+  --color-ink: oklch(0.18 0.02 40);
+  --color-ink-soft: oklch(0.42 0.03 40);
+  --color-surface: oklch(1 0 0);
+  --color-dark: oklch(0.22 0.02 35);
+  --color-red: oklch(0.62 0.22 25);
+  --color-red-deep: oklch(0.52 0.22 25);
+  --color-yellow: oklch(0.86 0.17 88);
+  --color-yellow-deep: oklch(0.78 0.18 82);
+  --color-border-soft: oklch(0.9 0.02 80);
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
+  --color-primary: var(--color-red);
+  --color-primary-foreground: oklch(1 0 0);
+  --color-accent: var(--color-yellow);
+  --color-accent-foreground: var(--color-ink);
+  --color-muted: oklch(0.94 0.01 80);
+  --color-muted-foreground: var(--color-ink-soft);
+  --color-border: var(--color-border-soft);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-ink);
+  --color-ring: var(--color-red);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@utility badge-pop {
+  background: var(--color-red);
+  color: white;
+}
+@utility badge-new {
+  background: var(--color-yellow);
+  color: var(--color-ink);
+}
+@utility badge-spicy {
+  background: oklch(0.55 0.24 30);
+  color: white;
+}
+@utility badge-promo {
+  background: var(--color-ink);
+  color: var(--color-yellow);
+}
